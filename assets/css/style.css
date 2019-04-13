@@ -1,0 +1,17 @@
+.gif-container {
+    margin: 5px;
+}
+
+.spacer {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.click-gif {
+    height: 300px;
+    width: auto;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+   
+}
