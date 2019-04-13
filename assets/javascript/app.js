@@ -1,17 +1,6 @@
-$(document).ready(function trivia() {
-    // GIPHY BETA API KEY: Dwmlj7sZzRAPR800A8DwHESIr2jFkZjv
-
-    // sample search url: https://api.giphy.com/v1/gifs/search?api_key=Dwmlj7sZzRAPR800A8DwHESIr2jFkZjv&q=capybara&limit=10&offset=0&rating=G&lang=en
-
-    // sample deconstructed: general url + api key + &q= + user input + &limit=10 + &rating=G
-
-    // Output categories: "title": "capybara GIF", "rating": "g",  
-
-    // fixed_height and fixed_height_still (200 X 200)
-    // fixed_height_small and fixed_height_small_still (100 x 100)
-
-
-   // GLOBAL VARIABLE //
+$(document).ready(function gifGenerator() {
+    
+    // GLOBAL VARIABLE //
     var animalArr = ["rabbit", "dog", "bear"];
 
     // FUNCTIONS //
@@ -81,7 +70,6 @@ $(document).ready(function trivia() {
 
   
     $(document).on("click",".btn", function () {
-  //  $("button").on("click", function () {  // Did not work due to dynamically generated buttons.
         var animal = $(this).attr("data-point");
         var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=Dwmlj7sZzRAPR800A8DwHESIr2jFkZjv&q=" + animal + "&limit=10&offset=0&rating=G&lang=en";
 
@@ -101,7 +89,6 @@ $(document).ready(function trivia() {
 
                     var animalImage = $('<img class="card-img-top click-gif">');
                     animalImage.attr('src', results[i].images.fixed_height_still.url);
-                    // Look at pausing-gifs in 4-6 for example.
                     animalImage.attr('data-still', results[i].images.fixed_height_still.url);
                     animalImage.attr('data-animate', results[i].images.fixed_height.url);
                     animalImage.attr('data-state', 'still');
@@ -120,7 +107,7 @@ $(document).ready(function trivia() {
 
             });
     });
-// WORKS
+
     $(document).on("click",".click-gif", function () { // 
       
         var state = $(this).attr("data-state");
